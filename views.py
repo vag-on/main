@@ -4,7 +4,7 @@ from django.views.generic import ListView
 from .models import News, Review, Comment
 from django.views.generic import CreateView
 from django.urls import reverse_lazy
-
+ 
 def home(request):
     """Главная страница с основными разделами"""
     news = News.objects.filter(is_published=True)[:3]  # Последние 3 новости
