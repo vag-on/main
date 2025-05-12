@@ -1,0 +1,61 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Оставить отзыв - Помощь при ДТП{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="form-section">
+                    <div class="text-center mb-4">
+                        <h1>Оставить отзыв</h1>
+                        <p class="lead">Поделитесь своим опытом работы с нами</p>
+                    </div>
+                        
+                        <form method="post">
+                            {% csrf_token %}
+                            
+                            <div class="mb-3">
+                                <label for="{{ form.author_name.id_for_label }}" class="form-label">
+                                    Ваше имя
+                                </label>
+                                {{ form.author_name.errors }}
+                                <input type="text" 
+                                       name="{{ form.author_name.name }}" 
+                                       id="{{ form.author_name.id_for_label }}"
+                                       class="form-control {% if form.author_name.errors %}is-invalid{% endif %}"
+                                       required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="{{ form.content.id_for_label }}" class="form-label">
+                                    Ваш отзыв
+                                </label>
+                                {{ form.content.errors }}
+                                <textarea name="{{ form.content.name }}"
+                                          id="{{ form.content.id_for_label }}"
+                                          class="form-control {% if form.content.errors %}is-invalid{% endif %}"
+                                          rows="5"
+                                          required></textarea>
+                            </div>
+
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-warning btn-lg">Отправить отзыв</button>
+                            </div>
+                        </form>
+
+                        <div class="mt-4">
+                            <p class="text-center">
+                                <small class="text-muted">
+                                    Ваш отзыв будет опубликован после проверки модератором.<br>
+                                    Спасибо за обратную связь!
+                                </small>
+                            </p>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

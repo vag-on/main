@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}Помощь при ДТП{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="/static/img/favicon.svg" sizes="any">
+    <link rel="apple-touch-icon" href="/static/img/favicon.svg">
+    <meta name="theme-color" content="#ff6600">
+    <!-- Основные SEO-теги -->
+  <title>Аварийный комиссар, независимая оценка и автоюрист — «Ваша Компания»</title>
+  <meta name="description" content="Профессиональные услуги аварийного комиссара, независимая оценка ущерба и консультации автоюриста. Круглосуточная помощь при ДТП — быстро и надёжно.">
+  <meta name="keywords" content="аварийный комиссар, независимая оценка, автоюрист, помощь при ДТП, оценка ущерба, консультация юриста">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph (для соцсетей) -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Аварийный комиссар, независимая оценка и автоюрист">
+  <meta property="og:description" content="Круглосуточные услуги аварийного комиссара, независимая оценка ущерба и автоюрист для помощи при ДТП.">
+  <meta property="og:image"       content="https://help02.ru/static/img/favicon.svg">
+  <meta property="og:url"         content="https://help02.ru">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Аварийный комиссар и автоюрист">
+  <meta name="twitter:description" content="Срочная помощь при ДТП: аварийный комиссар, независимая оценка и автоюрист.">
+  <meta name="twitter:image"       content="https://help02.ru/static/img/favicon.svg">
+
+  <!-- Структурированные данные (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://help02.ru",
+    "@type": "LocalBusiness",
+    "name": "Помощь при ДТП",
+    "url": "https://help02.ru",
+    "logo": "https://help02.ru/static/img/favicon.svg",
+    "description": "Профессиональные услуги аварийного комиссара, независимая оценка ущерба и консультации автоюриста круглосуточно.",
+    "telephone": "+7 (927) 344-44-04",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Ул. Островского, д. 15",
+      "addressLocality": "Салават",
+      "postalCode": "453250",
+      "addressCountry": "RU"
+    },
+    "openingHours": "Mo–Su 00:00-23:59",
+    "serviceType": [
+      "Аварийный комиссар",
+      "Независимая оценка ущерба",
+      "Консультации автоюриста"
+    ]
+  }
+  </script>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+        main > *:last-child {
+            margin-bottom: auto;
+        }
+        footer {
+            flex-shrink: 0;
+            margin-top: auto;
+        }
+        :root {
+            --bs-body-bg: #e0e0e0; /* более темный серый фон */
+            --bs-primary: #ff6600; /* оранжевый акцент */
+            --bs-primary-rgb: 255, 102, 0;
+            --bs-secondary: #6c757d; /* гармоничный серый для второстепенного */
+            --bs-dark-text: #212529; /* тёмный цвет текста */
+        }
+        body {
+            background-color: var(--bs-body-bg);
+            color: var(--bs-dark-text);
+            font-family: 'Roboto', sans-serif;
+        }
+        .container, .container-fluid {
+            background-color: transparent !important;
+        }
+        .card-body {
+            background-color: transparent !important;
+        }
+        .row, .col, [class^="col-"] {
+            background-color: transparent !important;
+        }
+        .navbar {
+            background-color: var(--bs-primary);
+        }
+        .navbar-brand,
+        .nav-link {
+            color: white !important;
+        }
+        .nav-link:hover {
+            color: var(--bs-light) !important;
+        }
+        .section {
+            padding: 4rem 0;
+            background-color: transparent;
+        }
+        main {
+            background-color: var(--bs-body-bg);
+        }
+        .section-title {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .card {
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: var(--bs-dark-text);
+            background-color: rgba(255, 255, 255, 0.1) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+        }
+        .service-card {
+            text-align: center;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            background-color: rgba(255, 255, 255, 0.15) !important;
+        }
+        .news-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            display: block;
+            line-height: 1.2;
+        }
+        .news-date {
+            font-size: 0.8rem;
+            color: #6c757d;
+        }
+        .contact-phone {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: var(--bs-dark-text);
+        }
+        .contact-phone:hover {
+            color: var(--bs-dark-text);
+        }
+        footer.bg-primary {
+            background-color: var(--bs-primary) !important;
+        }
+        footer p,
+        footer h5 {
+            color: white !important;
+        }
+        .btn-primary,
+        .btn-warning {
+            background-color: var(--bs-primary);
+            border-color: var(--bs-primary);
+            color: white;
+        }
+        .btn-primary:hover,
+        .btn-warning:hover {
+            background-color: var(--bs-secondary);
+            border-color: var(--bs-secondary);
+            color: white;
+        }
+        /* Hero section */
+        .hero {
+            position: relative;
+            /* background-image: url('/static/img/hero-bg.svg'); */
+            background-image: url('/static/img/hero.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        .hero .btn-warning {
+            padding: 1rem 2rem;
+            font-size: 1.25rem;
+            font-weight: 500;
+            text-shadow: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .form-section {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        .form-section h3 {
+            color: var(--bs-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        .form-control {
+            border: 2px solid #e0e0e0;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+        }
+        .form-control:focus {
+            border-color: var(--bs-primary);
+            box-shadow: 0 0 0 0.2rem rgba(255, 102, 0, 0.25);
+        }
+        .form-label {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+    </style> 
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">Помощь при ДТП</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'news_list' %}">Новости</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'review_create' %}">Оставить отзыв</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        {% if messages %}
+        <div class="container mt-3">
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% block content %}
+        {% endblock %}
+    </main>
+
+<footer class="bg-primary mt-5">
+    <div class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Контакты</h5>
+                    <p>Комиссар: <a href="tel:+79273444404" class="btn btn-outline-light btn-sm">
+                            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                        </svg>
+                        +7 (927) 344-44-04
+                    </a></p>
+                    <p>Экспертиза: <a href="tel:+79876267727" class="btn btn-outline-light btn-sm">
+                            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                        </svg>
+                        +7 (987) 626-77-27
+                    </a></p>
+                    <p>Юрист: <a href="tel:+79173600179" class="btn btn-outline-light btn-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                        </svg>
+                        +7 (917) 360-01-79
+                    </a></p>
+                    <p>Email: <a href="mailto:avtourist@rhalikov.ru" class="btn btn-outline-light btn-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-at" viewBox="0 0 16 16">
+                            <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2zm3.708 6.208L1 11.105V5.383zM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2z"/>
+                            <path d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648m-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z"/>
+                        </svg>
+                        avtourist@rhalikov.ru
+                    </a></p>
+                    <p><a href="https://t.me/helpdtp02bot" class="btn btn-outline-light btn-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telegram" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"/>
+                        </svg>
+                        Телеграм-бот
+                    </a></p>
+                    
+                </div>
+                <div class="col-md-6">
+                    <h5>Юридическая информация</h5>
+                    <p>ИП БАУКОВА ЕЛЕНА ИГОРЕВНА</p>
+                    <p>ИНН: 026600966551</p>
+                    <p>ОГРН: 313028000020787</p>
+                    <p>Адрес: г. Салават, ул. Островского, д. 15</p>
+                    <p><!-- Yandex.Metrika informer --> <a href="https://metrika.yandex.ru/stat/?id=101596093&amp;from=informer" target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/101596093/3_0_FFD386FF_FFB366FF_0_pageviews" style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" data-cid="101596093" data-lang="ru" /></a> <!-- /Yandex.Metrika informer --> <!-- Yandex.Metrika counter --> <script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date(); for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }} k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(101596093, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/101596093" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter --></p>
+                </div>
+            </div>
+            <center><a href="https://vwagon.t.me" class="text-white">disigned by Kovaletz Nikita</a></center>
+        </div>
+    </div>
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Affc3aca641832805e67d38f0cd409cb2b567521605e8d130ff915837a2f01a7c&amp;width=100%25&amp;height=290&amp;lang=ru_RU&amp;scroll=true"></script>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
